@@ -146,81 +146,58 @@ $(document).ready(function(){initNavTree('example_8cpp_source.html',''); initRes
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(500));</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#a46750d89037d6aa9fbf98501419ad5aa">write_register</a>(0x0000, 0x0006, {0x01});</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#a93c5a5cfcb25c561986fbc4cde33e773">zero</a>();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#a93c5a5cfcb25c561986fbc4cde33e773">zero</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#a46750d89037d6aa9fbf98501419ad5aa">write_register</a>(0, 6, {0x00});</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#a46750d89037d6aa9fbf98501419ad5aa">write_register</a>(0, 17, {0xff, 0x00, 0x00, 0x00});</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::vector&lt;uint8_t&gt; reg_data;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// com.read_register(2, 9, reg_data, 500);</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// if (reg_data.size() &gt; 0) {</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//   std::cout &lt;&lt; &quot;S/N: &quot; &lt;&lt; reinterpret_cast&lt;char*&gt;(reg_data.data()) &lt;&lt; &quot;\n&quot;;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// }</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#a45bc990c78150916122b60ed0a73dbd7">read_register</a>(2, 9, reg_data, 500);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Register data: &quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; reg_data.size(); ++i) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      std::cout &lt;&lt; std::hex &lt;&lt; static_cast&lt;int&gt;(reg_data[i]) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::cout &lt;&lt; std::dec &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Set up frequency counting</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Reading sensor data:\n&quot;</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">auto</span> start = std::chrono::system_clock::now();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    int64_t count = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">double</span> hz = 0.0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Reserve sensor data buffer</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::vector&lt;double&gt; raw_data;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::vector&lt;double&gt; data;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    raw_data.reserve(100);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    data.reserve(100);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">while</span> (com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#a3b6982529e56bc17be2d37c2f65d9326">is_connected</a>()) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="comment">// Read data</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#a87c6a2de0d8b19e243de05dc3dc413d2">read</a>(data);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#ad9e378459bd174cc1915838a4e14ff2d">read_raw</a>(raw_data, 0);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="comment">// Update time</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      std::chrono::duration&lt;double&gt; diff = std::chrono::system_clock::now() - start;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Set up frequency counting</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Reading sensor data:\n&quot;</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">auto</span> start = std::chrono::system_clock::now();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    int64_t count = 0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">double</span> hz = 0.0;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Reserve sensor data buffer</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::vector&lt;double&gt; raw_data;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::vector&lt;double&gt; data;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    raw_data.reserve(100);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    data.reserve(100);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">while</span> (com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#a3b6982529e56bc17be2d37c2f65d9326">is_connected</a>()) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="comment">// Read data</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#a87c6a2de0d8b19e243de05dc3dc413d2">read</a>(data);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      com.<a class="code" href="classtouchlab__comm_1_1TouchlabComms.html#ad9e378459bd174cc1915838a4e14ff2d">read_raw</a>(raw_data, 0);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="comment">// Update time</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      std::chrono::duration&lt;double&gt; diff = std::chrono::system_clock::now() - start;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="comment">// Print update rate and raw data</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;Rate: &quot;</span> &lt;&lt; std::fixed &lt;&lt; std::setprecision(1) &lt;&lt; hz &lt;&lt; <span class="stringliteral">&quot;Hz, Raw data: &quot;</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">double</span> value : raw_data) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::cout &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="comment">// Print update rate and triaxial data</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;Rate: &quot;</span> &lt;&lt; std::fixed &lt;&lt; std::setprecision(1) &lt;&lt; hz &lt;&lt; <span class="stringliteral">&quot;Hz, Calibrated data: &quot;</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">double</span> value : data) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        std::cout &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="comment">// Update sensor rate</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="keywordflow">if</span> (diff.count() &gt; 0.5) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        hz = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(count) / diff.count();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        start = std::chrono::system_clock::now();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        count = 0;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      ++count;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Usage:\ntouchlab_comm_example &lt;serial_port&gt; [&lt;path_to_sensor_param_file&gt;]\n&quot;</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    exit(1);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="comment">// Print update rate and raw data</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;Rate: &quot;</span> &lt;&lt; std::fixed &lt;&lt; std::setprecision(1) &lt;&lt; hz &lt;&lt; <span class="stringliteral">&quot;Hz, Raw data: &quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">double</span> value : raw_data) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        std::cout &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="comment">// Print update rate and triaxial data</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;Rate: &quot;</span> &lt;&lt; std::fixed &lt;&lt; std::setprecision(1) &lt;&lt; hz &lt;&lt; <span class="stringliteral">&quot;Hz, Calibrated data: &quot;</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">double</span> value : data) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        std::cout &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="comment">// Update sensor rate</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">if</span> (diff.count() &gt; 0.5) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        hz = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(count) / diff.count();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        start = std::chrono::system_clock::now();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        count = 0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      ++count;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Usage:\ntouchlab_comm_example &lt;serial_port&gt; [&lt;path_to_sensor_param_file&gt;]\n&quot;</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    exit(1);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="ttc" id="aclasstouchlab__comm_1_1TouchlabComms_html"><div class="ttname"><a href="classtouchlab__comm_1_1TouchlabComms.html">touchlab_comm::TouchlabComms</a></div><div class="ttdoc">Touchlab communication main class.</div><div class="ttdef"><b>Definition:</b> <a href="touchlab__comm_8hpp_source.html#l00041">touchlab_comm.hpp:42</a></div></div>
 <div class="ttc" id="aclasstouchlab__comm_1_1TouchlabComms_html_a3b6982529e56bc17be2d37c2f65d9326"><div class="ttname"><a href="classtouchlab__comm_1_1TouchlabComms.html#a3b6982529e56bc17be2d37c2f65d9326">touchlab_comm::TouchlabComms::is_connected</a></div><div class="ttdeci">bool is_connected()</div><div class="ttdoc">Returns if the sensor is connected and communicating.</div></div>
 <div class="ttc" id="aclasstouchlab__comm_1_1TouchlabComms_html_a3be90fb6abc9708a93aea2a9d147e81f"><div class="ttname"><a href="classtouchlab__comm_1_1TouchlabComms.html#a3be90fb6abc9708a93aea2a9d147e81f">touchlab_comm::TouchlabComms::init</a></div><div class="ttdeci">void init(const std::string &amp;filename=&quot;&quot;)</div><div class="ttdoc">Init comm.</div></div>
-<div class="ttc" id="aclasstouchlab__comm_1_1TouchlabComms_html_a45bc990c78150916122b60ed0a73dbd7"><div class="ttname"><a href="classtouchlab__comm_1_1TouchlabComms.html#a45bc990c78150916122b60ed0a73dbd7">touchlab_comm::TouchlabComms::read_register</a></div><div class="ttdeci">void read_register(uint16_t device, uint16_t reg, std::vector&lt; uint8_t &gt; &amp;data, int64_t timeout=500.0)</div><div class="ttdoc">Read a value of a register This method is not intended for end users and it will fail with an excepti...</div></div>
-<div class="ttc" id="aclasstouchlab__comm_1_1TouchlabComms_html_a46750d89037d6aa9fbf98501419ad5aa"><div class="ttname"><a href="classtouchlab__comm_1_1TouchlabComms.html#a46750d89037d6aa9fbf98501419ad5aa">touchlab_comm::TouchlabComms::write_register</a></div><div class="ttdeci">void write_register(uint16_t device, uint16_t reg, const std::vector&lt; uint8_t &gt; &amp;data, int64_t timeout=500.0)</div><div class="ttdoc">Write a value to a register This method is not intended for end users and it will fail with an except...</div></div>
 <div class="ttc" id="aclasstouchlab__comm_1_1TouchlabComms_html_a6cc8f87e8ac6b8b11020b97cc818e0ca"><div class="ttname"><a href="classtouchlab__comm_1_1TouchlabComms.html#a6cc8f87e8ac6b8b11020b97cc818e0ca">touchlab_comm::TouchlabComms::connect</a></div><div class="ttdeci">void connect(const std::string &amp;port)</div><div class="ttdoc">Connect to the sensor.</div></div>
 <div class="ttc" id="aclasstouchlab__comm_1_1TouchlabComms_html_a87c6a2de0d8b19e243de05dc3dc413d2"><div class="ttname"><a href="classtouchlab__comm_1_1TouchlabComms.html#a87c6a2de0d8b19e243de05dc3dc413d2">touchlab_comm::TouchlabComms::read</a></div><div class="ttdeci">void read(std::vector&lt; double &gt; &amp;data, int64_t timeout=500.0)</div><div class="ttdoc">Read calibrated data.</div></div>
 <div class="ttc" id="aclasstouchlab__comm_1_1TouchlabComms_html_a93c5a5cfcb25c561986fbc4cde33e773"><div class="ttname"><a href="classtouchlab__comm_1_1TouchlabComms.html#a93c5a5cfcb25c561986fbc4cde33e773">touchlab_comm::TouchlabComms::zero</a></div><div class="ttdeci">void zero(const std::vector&lt; int &gt; &amp;ind={})</div><div class="ttdoc">Zero out sensor offset.</div></div>
