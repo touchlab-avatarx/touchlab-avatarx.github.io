@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API &mdash; Touchlab Driver 0.1.6 documentation</title>
+      <!-- <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" /> -->
+      <link rel="stylesheet" type="text/css" href="../common/_static/pygments.css" />
+      <!-- <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" /> -->
+      <link rel="stylesheet" type="text/css" href="../common/_static/css/theme.css" />
+      <!-- <link rel="stylesheet" type="text/css" href="_static/custom.css?v=183a17e2" /> -->
+      <link rel="stylesheet" type="text/css" href="../common/_static/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="../common/_static/jquery.js"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../common/_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script src="_static/documentation_options.js?v=6e0256f3"></script>
+      <script src="../common/_static/documentation_options.js"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="../common/_static/doctools.js"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../common/_static/sphinx_highlight.js"></script>
+    <script src="../common/_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Example usage" href="example.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #191e24" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Touchlab Driver
+              <img src="../common/_static/touchlab_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabCommsE"><code class="docutils literal notranslate"><span class="pre">touchlab_comm::TouchlabComms</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms13TouchlabCommsEv"><code class="docutils literal notranslate"><span class="pre">TouchlabComms()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabCommsD0Ev"><code class="docutils literal notranslate"><span class="pre">~TouchlabComms()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms4initERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms7connectERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms8read_rawERNSt6vectorIdEE7int64_t"><code class="docutils literal notranslate"><span class="pre">read_raw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms4readERNSt6vectorIdEE7int64_t"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms13read_registerE8uint16_t8uint16_tRNSt6vectorI7uint8_tEE7int64_t"><code class="docutils literal notranslate"><span class="pre">read_register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms14write_registerE8uint16_t8uint16_tRKNSt6vectorI7uint8_tEE7int64_t"><code class="docutils literal notranslate"><span class="pre">write_register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms12is_connectedEv"><code class="docutils literal notranslate"><span class="pre">is_connected()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms4zeroERKNSt6vectorIiEE"><code class="docutils literal notranslate"><span class="pre">zero()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms4zeroERKNSt6vectorINSt6vectorIdEEEERKNSt6vectorIiEE"><code class="docutils literal notranslate"><span class="pre">zero()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms9translateERKNSt6vectorIdEERNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">translate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N13touchlab_comm13TouchlabComms11get_versionEv"><code class="docutils literal notranslate"><span class="pre">get_version()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #191e24" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Touchlab Driver</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Link to this heading"></a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabCommsE">
+<span id="_CPPv3N13touchlab_comm13TouchlabCommsE"></span><span id="_CPPv2N13touchlab_comm13TouchlabCommsE"></span><span id="touchlab_comm::TouchlabComms"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TouchlabComms</span></span></span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabCommsE" title="Link to this definition"></a><br /></dt>
+<dd><p>Touchlab communication main class. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms13TouchlabCommsEv">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms13TouchlabCommsEv"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms13TouchlabCommsEv"></span><span id="touchlab_comm::TouchlabComms::TouchlabComms"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a3445deddd619ea6eb7e0b692376b123a"></span><span class="sig-name descname"><span class="n"><span class="pre">TouchlabComms</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms13TouchlabCommsEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct a new Touchlab Comms object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabCommsD0Ev">
+<span id="_CPPv3N13touchlab_comm13TouchlabCommsD0Ev"></span><span id="_CPPv2N13touchlab_comm13TouchlabCommsD0Ev"></span><span id="touchlab_comm::TouchlabComms::~TouchlabComms"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a32a57d34613a3b6cc61cb5c6963d208b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~TouchlabComms</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabCommsD0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Destroy the Touchlab Comms object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms4initERKNSt6stringE">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms4initERKNSt6stringE"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms4initERKNSt6stringE"></span><span id="touchlab_comm::TouchlabComms::init__ssCR"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a3be90fb6abc9708a93aea2a9d147e81f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms4initERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Init comm. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – path to the sensor param binary file </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms7connectERKNSt6stringE">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms7connectERKNSt6stringE"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms7connectERKNSt6stringE"></span><span id="touchlab_comm::TouchlabComms::connect__ssCR"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a6cc8f87e8ac6b8b11020b97cc818e0ca"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">connect</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">port</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms7connectERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Connect to the sensor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> – Serial port name, e.g. <code class="docutils literal notranslate"><span class="pre">COM1</span></code>, or <code class="docutils literal notranslate"><span class="pre">/dev/ttyACM0</span></code>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms8read_rawERNSt6vectorIdEE7int64_t">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms8read_rawERNSt6vectorIdEE7int64_t"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms8read_rawERNSt6vectorIdEE7int64_t"></span><span id="touchlab_comm::TouchlabComms::read_raw__std::vector:double:R.int64_t"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1ad9e378459bd174cc1915838a4e14ff2d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_raw</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">500.0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms8read_rawERNSt6vectorIdEE7int64_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Read raw signal. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Returned raw data vector from the latest data packet </p></li>
+<li><p><strong>timeout</strong> – Timeout in ms </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms4readERNSt6vectorIdEE7int64_t">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms4readERNSt6vectorIdEE7int64_t"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms4readERNSt6vectorIdEE7int64_t"></span><span id="touchlab_comm::TouchlabComms::read__std::vector:double:R.int64_t"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a87c6a2de0d8b19e243de05dc3dc413d2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">500.0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms4readERNSt6vectorIdEE7int64_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Read calibrated data. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Return data calibrated by the model defined by the SensorParameters class </p></li>
+<li><p><strong>timeout</strong> – Timeout in ms </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms13read_registerE8uint16_t8uint16_tRNSt6vectorI7uint8_tEE7int64_t">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms13read_registerE8uint16_t8uint16_tRNSt6vectorI7uint8_tEE7int64_t"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms13read_registerE8uint16_t8uint16_tRNSt6vectorI7uint8_tEE7int64_t"></span><span id="touchlab_comm::TouchlabComms::read_register__uint16_t.uint16_t.std::vector:uint8_t:R.int64_t"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a45bc990c78150916122b60ed0a73dbd7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_register</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">device</span></span>, <span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">reg</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">500.0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms13read_registerE8uint16_t8uint16_tRNSt6vectorI7uint8_tEE7int64_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Read a value of a register This method is not intended for end users and it will fail with an exception. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> – Device ID </p></li>
+<li><p><strong>reg</strong> – Register address </p></li>
+<li><p><strong>data</strong> – Output data vector </p></li>
+<li><p><strong>timeout</strong> – Timeout in ms </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms14write_registerE8uint16_t8uint16_tRKNSt6vectorI7uint8_tEE7int64_t">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms14write_registerE8uint16_t8uint16_tRKNSt6vectorI7uint8_tEE7int64_t"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms14write_registerE8uint16_t8uint16_tRKNSt6vectorI7uint8_tEE7int64_t"></span><span id="touchlab_comm::TouchlabComms::write_register__uint16_t.uint16_t.std::vector:uint8_t:CR.int64_t"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a46750d89037d6aa9fbf98501419ad5aa"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write_register</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">device</span></span>, <span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">reg</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">500.0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms14write_registerE8uint16_t8uint16_tRKNSt6vectorI7uint8_tEE7int64_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Write a value to a register This method is not intended for end users and it will fail with an exception. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> – Device ID </p></li>
+<li><p><strong>reg</strong> – Register address </p></li>
+<li><p><strong>data</strong> – Data vector to write </p></li>
+<li><p><strong>timeout</strong> – Timeout in ms </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms12is_connectedEv">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms12is_connectedEv"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms12is_connectedEv"></span><span id="touchlab_comm::TouchlabComms::is_connected"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a3b6982529e56bc17be2d37c2f65d9326"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_connected</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms12is_connectedEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Returns if the sensor is connected and communicating. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>std::string True if connected </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms4zeroERKNSt6vectorIiEE">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms4zeroERKNSt6vectorIiEE"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms4zeroERKNSt6vectorIiEE"></span><span id="touchlab_comm::TouchlabComms::zero__std::vector:i:CR"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a93c5a5cfcb25c561986fbc4cde33e773"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">zero</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ind</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms4zeroERKNSt6vectorIiEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Zero out sensor offset. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ind</strong> – Optional vector of sensor indices to zero out. If empty, all taxels will be zeroed. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms4zeroERKNSt6vectorINSt6vectorIdEEEERKNSt6vectorIiEE">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms4zeroERKNSt6vectorINSt6vectorIdEEEERKNSt6vectorIiEE"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms4zeroERKNSt6vectorINSt6vectorIdEEEERKNSt6vectorIiEE"></span><span id="touchlab_comm::TouchlabComms::zero__std::vector:std::vector:double::CR.std::vector:i:CR"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a7cfb289fb6f41b9a1b5f0d5ff6a5b316"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">zero</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ind</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms4zeroERKNSt6vectorINSt6vectorIdEEEERKNSt6vectorIiEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Zero out sensor offset with custom data. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Custom data used to zero the sensor. Inner vector should have one element for each taxel. The outer vector should contain n samples of input data. </p></li>
+<li><p><strong>ind</strong> – Optional vector of sensor indices to zero out. If empty, all taxels will be zeroed. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms9translateERKNSt6vectorIdEERNSt6vectorIdEE">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms9translateERKNSt6vectorIdEERNSt6vectorIdEE"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms9translateERKNSt6vectorIdEERNSt6vectorIdEE"></span><span id="touchlab_comm::TouchlabComms::translate__std::vector:double:CR.std::vector:double:R"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a4aeca21bcdeb1797a106bb7ac55c5ed6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">raw</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">calibrated</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms9translateERKNSt6vectorIdEERNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Translate raw data sample into calibrated values. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw</strong> – Input raw data </p></li>
+<li><p><strong>calibrated</strong> – Output calibrated data </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13touchlab_comm13TouchlabComms11get_versionEv">
+<span id="_CPPv3N13touchlab_comm13TouchlabComms11get_versionEv"></span><span id="_CPPv2N13touchlab_comm13TouchlabComms11get_versionEv"></span><span id="touchlab_comm::TouchlabComms::get_version"></span><span class="target" id="classtouchlab__comm_1_1TouchlabComms_1a2f5a78ee52a9528f55fb3a614e1095f6"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13touchlab_comm13TouchlabComms11get_versionEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the version of the API. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>std::string Version string </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="example.html" class="btn btn-neutral float-left" title="Example usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Touchlab Robotics.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

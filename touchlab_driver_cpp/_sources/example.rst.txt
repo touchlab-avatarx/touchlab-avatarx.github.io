@@ -1,0 +1,10 @@
+Example usage
+=============
+
+
+.. literalinclude:: ../example/example.cpp
+
+
+To build this project using CMake:
+
+.. literalinclude:: ../example/CMakeLists.txt

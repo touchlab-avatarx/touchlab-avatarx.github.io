@@ -1,0 +1,8 @@
+Installation
+============
+
+Dependencies
+------------
+The driver depends only on the C++ standard library:
+- Linux: ``glibc >= 2.31``
+- Windows: ``MSVC >= 2015``

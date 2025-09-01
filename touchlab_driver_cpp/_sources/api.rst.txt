@@ -1,0 +1,5 @@
+API
+===
+
+.. doxygenclass:: touchlab_comm::TouchlabComms
+  :members:
