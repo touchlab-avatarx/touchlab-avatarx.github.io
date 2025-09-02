@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; Allegro API 1.0.0 documentation</title>
+      <!-- <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" /> -->
+      <link rel="stylesheet" type="text/css" href="../common/_static/pygments.css" />
+      <!-- <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" /> -->
+      <link rel="stylesheet" type="text/css" href="../common/_static/css/theme.css" />
+      <!-- <link rel="stylesheet" type="text/css" href="_static/custom.css?v=183a17e2" /> -->
+      <link rel="stylesheet" type="text/css" href="../common/_static/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="../common/_static/jquery.js"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../common/_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="../common/_static/documentation_options.js"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="../common/_static/doctools.js"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../common/_static/sphinx_highlight.js"></script>
+    <script src="../common/_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CLI interface" href="cli.html" />
+    <link rel="prev" title="Allegro c++ API Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #191e24" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Allegro API
+              <img src="../common/_static/touchlab_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-cmake">Using CMake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-colcon">Using Colcon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can-interface-setup">CAN interface setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #191e24" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Allegro API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<section id="using-cmake">
+<h2>Using CMake<a class="headerlink" href="#using-cmake" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Install CMake and a C++ compiler that supports C++17.</p></li>
+<li><p>Create a build directory and navigate into it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+</pre></div>
+</div>
+</li>
+<li><p>Run CMake to configure the project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>..
+</pre></div>
+</div>
+</li>
+<li><p>Build the project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+<li><p>Optionally, install the library and tools:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>cmake<span class="w"> </span>--install<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="using-colcon">
+<h2>Using Colcon<a class="headerlink" href="#using-colcon" title="Link to this heading"></a></h2>
+<p>The repository is a valid Colcon package. To build it put the package in your <a class="reference external" href="https://colcon.readthedocs.io/en/released/user/what-is-a-workspace.html">Colcon workspace</a> and <a class="reference external" href="https://colcon.readthedocs.io/en/released/user/quick-start.html">build the workspace</a>.</p>
+</section>
+<section id="can-interface-setup">
+<h2>CAN interface setup<a class="headerlink" href="#can-interface-setup" title="Link to this heading"></a></h2>
+<p>For CAN interfaces supported by the Linux kernel (e.g. <a class="reference external" href="https://www.peak-system.com/PCAN-USB.199.0.html?&amp;L=1">Peak CAN interfaces</a>), configure the interface using systemd.
+Create <cite>/etc/systemd/network/80-can.network</cite>, with the following configuration for can0:</p>
+<blockquote>
+<div><div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[Match]</span>
+<span class="na">Name</span><span class="o">=</span><span class="s">can0</span>
+<span class="k">[CAN]</span>
+<span class="na">BitRate</span><span class="o">=</span><span class="s">1000K</span>
+<span class="na">RestartSec</span><span class="o">=</span><span class="s">100ms</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>After setting up CAN interface, restart networking:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>systemd-networkd.service
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are running the API or derived driver in a Docker container,
+you have to perform the bove steps in the host system.
+You also need to run the container with <cite>–network host</cite> option to allow
+the container to access the host CAN interface.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Allegro c++ API Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cli.html" class="btn btn-neutral float-right" title="CLI interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Touchlab Robotics.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

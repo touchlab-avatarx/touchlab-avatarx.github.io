@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API &mdash; Allegro API 1.0.0 documentation</title>
+      <!-- <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" /> -->
+      <link rel="stylesheet" type="text/css" href="../common/_static/pygments.css" />
+      <!-- <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" /> -->
+      <link rel="stylesheet" type="text/css" href="../common/_static/css/theme.css" />
+      <!-- <link rel="stylesheet" type="text/css" href="_static/custom.css?v=183a17e2" /> -->
+      <link rel="stylesheet" type="text/css" href="../common/_static/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="../common/_static/jquery.js"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../common/_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="../common/_static/documentation_options.js"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="../common/_static/doctools.js"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../common/_static/sphinx_highlight.js"></script>
+    <script src="../common/_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Example usage" href="example.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #191e24" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Allegro API
+              <img src="../common/_static/touchlab_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHandE"><code class="docutils literal notranslate"><span class="pre">allegro::AllegroHand</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand11AllegroHandEv"><code class="docutils literal notranslate"><span class="pre">AllegroHand()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHandD0Ev"><code class="docutils literal notranslate"><span class="pre">~AllegroHand()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand4initERKNSt6stringEi"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand9get_stateERNSt6vectorIdEERNSt6vectorIdEENSt6chrono8durationIeEE"><code class="docutils literal notranslate"><span class="pre">get_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand10set_torqueERKNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">set_torque()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand16get_torque_limitERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">get_torque_limit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand16set_torque_limitERKNSt6stringEd"><code class="docutils literal notranslate"><span class="pre">set_torque_limit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand15get_joint_namesEv"><code class="docutils literal notranslate"><span class="pre">get_joint_names()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand7get_imuERNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">get_imu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand10get_serialEv"><code class="docutils literal notranslate"><span class="pre">get_serial()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand16get_hand_versionEv"><code class="docutils literal notranslate"><span class="pre">get_hand_version()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand20get_firmware_versionEv"><code class="docutils literal notranslate"><span class="pre">get_firmware_version()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand13get_hand_typeEv"><code class="docutils literal notranslate"><span class="pre">get_hand_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand22get_finger_temperatureEi"><code class="docutils literal notranslate"><span class="pre">get_finger_temperature()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand20get_hand_temperatureEv"><code class="docutils literal notranslate"><span class="pre">get_hand_temperature()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7allegro11AllegroHand13set_device_idE7uint8_t"><code class="docutils literal notranslate"><span class="pre">set_device_id()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #191e24" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Allegro API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Link to this heading"></a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHandE">
+<span id="_CPPv3N7allegro11AllegroHandE"></span><span id="_CPPv2N7allegro11AllegroHandE"></span><span id="allegro::AllegroHand"></span><span class="target" id="classallegro_1_1AllegroHand"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AllegroHand</span></span></span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHandE" title="Link to this definition"></a><br /></dt>
+<dd><p>Class for interfacing with the Allegro Hand. </p>
+<p>This class provides methods to initialize, control, and retrieve data from the Allegro Hand. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand11AllegroHandEv">
+<span id="_CPPv3N7allegro11AllegroHand11AllegroHandEv"></span><span id="_CPPv2N7allegro11AllegroHand11AllegroHandEv"></span><span id="allegro::AllegroHand::AllegroHand"></span><span class="target" id="classallegro_1_1AllegroHand_1a2c1610ecf49fa8896126ae803f2749a8"></span><span class="sig-name descname"><span class="n"><span class="pre">AllegroHand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand11AllegroHandEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct a new <a class="reference internal" href="#classallegro_1_1AllegroHand"><span class="std std-ref">AllegroHand</span></a> object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHandD0Ev">
+<span id="_CPPv3N7allegro11AllegroHandD0Ev"></span><span id="_CPPv2N7allegro11AllegroHandD0Ev"></span><span id="allegro::AllegroHand::~AllegroHand"></span><span class="target" id="classallegro_1_1AllegroHand_1ae1f705d6e7bee453bfceded77de2456f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~AllegroHand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHandD0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Destroy the <a class="reference internal" href="#classallegro_1_1AllegroHand"><span class="std std-ref">AllegroHand</span></a> object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand4initERKNSt6stringEi">
+<span id="_CPPv3N7allegro11AllegroHand4initERKNSt6stringEi"></span><span id="_CPPv2N7allegro11AllegroHand4initERKNSt6stringEi"></span><span id="allegro::AllegroHand::init__ssCR.i"></span><span class="target" id="classallegro_1_1AllegroHand_1a735530d99db0e464847dab4bde0299b9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">port</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand4initERKNSt6stringEi" title="Link to this definition"></a><br /></dt>
+<dd><p>Initialize the Allegro Hand. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> – The CAN interface name to connect to the hand (e.g., “can0”). </p></li>
+<li><p><strong>id</strong> – The device CAN ID (default is 0). </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand9get_stateERNSt6vectorIdEERNSt6vectorIdEENSt6chrono8durationIeEE">
+<span id="_CPPv3N7allegro11AllegroHand9get_stateERNSt6vectorIdEERNSt6vectorIdEENSt6chrono8durationIeEE"></span><span id="_CPPv2N7allegro11AllegroHand9get_stateERNSt6vectorIdEERNSt6vectorIdEENSt6chrono8durationIeEE"></span><span id="allegro::AllegroHand::get_state__std::vector:double:R.std::vector:double:R.std::chrono::duration:l-double:"></span><span class="target" id="classallegro_1_1AllegroHand_1ae3f69d97b482bf3a6197c05476d7d21e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_state</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">measured_position</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">measured_velocity</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">seconds</span></span><span class="p"><span class="pre">(</span></span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand9get_stateERNSt6vectorIdEERNSt6vectorIdEENSt6chrono8durationIeEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the current state of the hand. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>measured_position</strong> – Vector to store the measured joint positions (rad). </p></li>
+<li><p><strong>measured_velocity</strong> – Vector to store the measured joint velocities (rad/s). </p></li>
+<li><p><strong>timeout</strong> – Timeout duration for the operation (default is infinite). </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the state was successfully retrieved, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand10set_torqueERKNSt6vectorIdEE">
+<span id="_CPPv3N7allegro11AllegroHand10set_torqueERKNSt6vectorIdEE"></span><span id="_CPPv2N7allegro11AllegroHand10set_torqueERKNSt6vectorIdEE"></span><span id="allegro::AllegroHand::set_torque__std::vector:double:CR"></span><span class="target" id="classallegro_1_1AllegroHand_1a42de92f1084f8759789f458e1982af79"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_torque</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">torque</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand10set_torqueERKNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Set the torque for the joints. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>torque</strong> – Vector of torque values to apply to the joints (N). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand16get_torque_limitERKNSt6stringE">
+<span id="_CPPv3N7allegro11AllegroHand16get_torque_limitERKNSt6stringE"></span><span id="_CPPv2N7allegro11AllegroHand16get_torque_limitERKNSt6stringE"></span><span id="allegro::AllegroHand::get_torque_limit__ssCR"></span><span class="target" id="classallegro_1_1AllegroHand_1a9c3f0639dee6e151ec8ff58648f517d6"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_torque_limit</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">joint_name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand16get_torque_limitERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the torque limit for a specific joint. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>joint_name</strong> – The name of the joint. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The torque limit for the specified joint (N). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand16set_torque_limitERKNSt6stringEd">
+<span id="_CPPv3N7allegro11AllegroHand16set_torque_limitERKNSt6stringEd"></span><span id="_CPPv2N7allegro11AllegroHand16set_torque_limitERKNSt6stringEd"></span><span id="allegro::AllegroHand::set_torque_limit__ssCR.double"></span><span class="target" id="classallegro_1_1AllegroHand_1a6cfcc4564956d6d0db1b170aad22748a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_torque_limit</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">joint_name</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">limit</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand16set_torque_limitERKNSt6stringEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Set the torque limit for a specific joint. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joint_name</strong> – The name of the joint. </p></li>
+<li><p><strong>limit</strong> – The new torque limit for the joint (N). </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand15get_joint_namesEv">
+<span id="_CPPv3N7allegro11AllegroHand15get_joint_namesEv"></span><span id="_CPPv2N7allegro11AllegroHand15get_joint_namesEv"></span><span id="allegro::AllegroHand::get_joint_names"></span><span class="target" id="classallegro_1_1AllegroHand_1ab2f21ebeefaae6de7e36c0689c7d6704"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_joint_names</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand15get_joint_namesEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the names of all joints in the hand. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A vector of joint names. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand7get_imuERNSt6vectorIdEE">
+<span id="_CPPv3N7allegro11AllegroHand7get_imuERNSt6vectorIdEE"></span><span id="_CPPv2N7allegro11AllegroHand7get_imuERNSt6vectorIdEE"></span><span id="allegro::AllegroHand::get_imu__std::vector:double:R"></span><span class="target" id="classallegro_1_1AllegroHand_1a3a03e89c3d6d2ac934fcbeac48ff6a9f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_imu</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">quaternion</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand7get_imuERNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the IMU data from the hand. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>quaternion</strong> – Vector to store the IMU quaternion data. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand10get_serialEv">
+<span id="_CPPv3N7allegro11AllegroHand10get_serialEv"></span><span id="_CPPv2N7allegro11AllegroHand10get_serialEv"></span><span id="allegro::AllegroHand::get_serial"></span><span class="target" id="classallegro_1_1AllegroHand_1aadffc303d82a916ac0929de047c262f3"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_serial</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand10get_serialEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the serial number of the hand. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The serial number as a string. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand16get_hand_versionEv">
+<span id="_CPPv3N7allegro11AllegroHand16get_hand_versionEv"></span><span id="_CPPv2N7allegro11AllegroHand16get_hand_versionEv"></span><span id="allegro::AllegroHand::get_hand_version"></span><span class="target" id="classallegro_1_1AllegroHand_1a096b1eb56f64387a9ef44a840600f546"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_hand_version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand16get_hand_versionEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the version of the hand hardware. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The hand version as a string. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand20get_firmware_versionEv">
+<span id="_CPPv3N7allegro11AllegroHand20get_firmware_versionEv"></span><span id="_CPPv2N7allegro11AllegroHand20get_firmware_versionEv"></span><span id="allegro::AllegroHand::get_firmware_version"></span><span class="target" id="classallegro_1_1AllegroHand_1a56b19647f91068219fe2c8115f985591"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_firmware_version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand20get_firmware_versionEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the firmware version of the hand. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The firmware version as a string. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand13get_hand_typeEv">
+<span id="_CPPv3N7allegro11AllegroHand13get_hand_typeEv"></span><span id="_CPPv2N7allegro11AllegroHand13get_hand_typeEv"></span><span id="allegro::AllegroHand::get_hand_type"></span><span class="target" id="classallegro_1_1AllegroHand_1a6e1308cc761aadea3a70f5f1182f0c72"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_hand_type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand13get_hand_typeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the type of the hand. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The hand type as a string. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand22get_finger_temperatureEi">
+<span id="_CPPv3N7allegro11AllegroHand22get_finger_temperatureEi"></span><span id="_CPPv2N7allegro11AllegroHand22get_finger_temperatureEi"></span><span id="allegro::AllegroHand::get_finger_temperature__i"></span><span class="target" id="classallegro_1_1AllegroHand_1aa4b484aa377b3a47c587bb0caa9802a4"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_finger_temperature</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand22get_finger_temperatureEi" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the temperature of a specific finger. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – The ID of the finger. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The temperature of the specified finger (°C). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand20get_hand_temperatureEv">
+<span id="_CPPv3N7allegro11AllegroHand20get_hand_temperatureEv"></span><span id="_CPPv2N7allegro11AllegroHand20get_hand_temperatureEv"></span><span id="allegro::AllegroHand::get_hand_temperature"></span><span class="target" id="classallegro_1_1AllegroHand_1a6d4e98e1c84ce453122b5644ba2a784d"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_hand_temperature</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand20get_hand_temperatureEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the overall temperature of the hand. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The temperature of the hand (°C). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7allegro11AllegroHand13set_device_idE7uint8_t">
+<span id="_CPPv3N7allegro11AllegroHand13set_device_idE7uint8_t"></span><span id="_CPPv2N7allegro11AllegroHand13set_device_idE7uint8_t"></span><span id="allegro::AllegroHand::set_device_id__uint8_t"></span><span class="target" id="classallegro_1_1AllegroHand_1a617eab7f8ca8ec0f1af2a73dd77c190b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_device_id</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7allegro11AllegroHand13set_device_idE7uint8_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Set the device CAN ID of the hand. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – The new device CAN ID. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="example.html" class="btn btn-neutral float-left" title="Example usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Touchlab Robotics.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
