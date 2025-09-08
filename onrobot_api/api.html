@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API &mdash; OnRobot API 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../common/_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../common/_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=183a17e2" />
+      <link rel="stylesheet" type="text/css" href="../common/_static/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="../common/_static/jquery.js"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../common/_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="../common/_static/documentation_options.js"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="../common/_static/doctools.js"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../common/_static/sphinx_highlight.js"></script>
+    <script src="../common/_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Example usage" href="example.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #191e24" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            OnRobot API
+              <img src="../common/_static/touchlab_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG7E"><code class="docutils literal notranslate"><span class="pre">onrobot::Robot2FG7</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG79Robot2FG7Ev"><code class="docutils literal notranslate"><span class="pre">Robot2FG7()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG7D0Ev"><code class="docutils literal notranslate"><span class="pre">~Robot2FG7()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG74initERKNSt6stringEi"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG79get_stateERdRdRdRdNSt6chrono8durationIeEE"><code class="docutils literal notranslate"><span class="pre">get_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG712set_positionEd"><code class="docutils literal notranslate"><span class="pre">set_position()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG79set_forceEd"><code class="docutils literal notranslate"><span class="pre">set_force()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG716get_min_positionEv"><code class="docutils literal notranslate"><span class="pre">get_min_position()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG716get_max_positionEv"><code class="docutils literal notranslate"><span class="pre">get_max_position()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG713get_min_forceEv"><code class="docutils literal notranslate"><span class="pre">get_min_force()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG713get_max_forceEv"><code class="docutils literal notranslate"><span class="pre">get_max_force()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG710get_serialEv"><code class="docutils literal notranslate"><span class="pre">get_serial()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N7onrobot9Robot2FG712get_firmwareEv"><code class="docutils literal notranslate"><span class="pre">get_firmware()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #191e24" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">OnRobot API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Link to this heading"></a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG7E">
+<span id="_CPPv3N7onrobot9Robot2FG7E"></span><span id="_CPPv2N7onrobot9Robot2FG7E"></span><span id="onrobot::Robot2FG7"></span><span class="target" id="classonrobot_1_1Robot2FG7"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Robot2FG7</span></span></span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG7E" title="Link to this definition"></a><br /></dt>
+<dd><p>Class for interfacing with the OnRobot 2FG7 gripper. </p>
+<p>This class provides methods to initialize, control, and retrieve data from the OnRobot 2FG7 gripper. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG79Robot2FG7Ev">
+<span id="_CPPv3N7onrobot9Robot2FG79Robot2FG7Ev"></span><span id="_CPPv2N7onrobot9Robot2FG79Robot2FG7Ev"></span><span id="onrobot::Robot2FG7::Robot2FG7"></span><span class="target" id="classonrobot_1_1Robot2FG7_1a97ba409004dd1540ef6b52d1db158e59"></span><span class="sig-name descname"><span class="n"><span class="pre">Robot2FG7</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG79Robot2FG7Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct a new <a class="reference internal" href="#classonrobot_1_1Robot2FG7"><span class="std std-ref">Robot2FG7</span></a> object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG7D0Ev">
+<span id="_CPPv3N7onrobot9Robot2FG7D0Ev"></span><span id="_CPPv2N7onrobot9Robot2FG7D0Ev"></span><span id="onrobot::Robot2FG7::~Robot2FG7"></span><span class="target" id="classonrobot_1_1Robot2FG7_1a3f71ef8e48e0cc7d4b3b960c4cb778ff"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~Robot2FG7</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG7D0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Destroy the <a class="reference internal" href="#classonrobot_1_1Robot2FG7"><span class="std std-ref">Robot2FG7</span></a> object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG74initERKNSt6stringEi">
+<span id="_CPPv3N7onrobot9Robot2FG74initERKNSt6stringEi"></span><span id="_CPPv2N7onrobot9Robot2FG74initERKNSt6stringEi"></span><span id="onrobot::Robot2FG7::init__ssCR.i"></span><span class="target" id="classonrobot_1_1Robot2FG7_1a9e7df43de6b03c79fb174acb62791f24"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">address</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">port</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">502</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG74initERKNSt6stringEi" title="Link to this definition"></a><br /></dt>
+<dd><p>Initialize the gripper. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> – The IP address of the gripper. </p></li>
+<li><p><strong>port</strong> – The port number for communication (default is 502). </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG79get_stateERdRdRdRdNSt6chrono8durationIeEE">
+<span id="_CPPv3N7onrobot9Robot2FG79get_stateERdRdRdRdNSt6chrono8durationIeEE"></span><span id="_CPPv2N7onrobot9Robot2FG79get_stateERdRdRdRdNSt6chrono8durationIeEE"></span><span id="onrobot::Robot2FG7::get_state__doubleR.doubleR.doubleR.doubleR.std::chrono::duration:l-double:"></span><span class="target" id="classonrobot_1_1Robot2FG7_1af8f6d377a028e3998ce74df67639dbbe"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_state</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">measured_position</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">measured_velocity</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">measured_force</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">target_position</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">seconds</span></span><span class="p"><span class="pre">(</span></span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG79get_stateERdRdRdRdNSt6chrono8durationIeEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the current state of the gripper. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>measured_position</strong> – The measured position of the gripper (m). </p></li>
+<li><p><strong>measured_velocity</strong> – The measured velocity of the gripper (m/s). </p></li>
+<li><p><strong>measured_force</strong> – The measured force applied by the gripper (N). </p></li>
+<li><p><strong>target_position</strong> – The target position of the gripper (m). </p></li>
+<li><p><strong>timeout</strong> – Timeout duration (milliseconds) for the operation (default is infinite). </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the state was successfully retrieved, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG712set_positionEd">
+<span id="_CPPv3N7onrobot9Robot2FG712set_positionEd"></span><span id="_CPPv2N7onrobot9Robot2FG712set_positionEd"></span><span id="onrobot::Robot2FG7::set_position__double"></span><span class="target" id="classonrobot_1_1Robot2FG7_1a919cb53598e9c55f1fdff4f2bee18ca8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_position</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">position</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG712set_positionEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Set the target position of the gripper. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> – The target position to set (m). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG79set_forceEd">
+<span id="_CPPv3N7onrobot9Robot2FG79set_forceEd"></span><span id="_CPPv2N7onrobot9Robot2FG79set_forceEd"></span><span id="onrobot::Robot2FG7::set_force__double"></span><span class="target" id="classonrobot_1_1Robot2FG7_1afe469e586ddeb28963b8bb85ac52d503"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_force</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">force</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG79set_forceEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Set the target force of the gripper. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>force</strong> – The target force to set (N). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG716get_min_positionEv">
+<span id="_CPPv3N7onrobot9Robot2FG716get_min_positionEv"></span><span id="_CPPv2N7onrobot9Robot2FG716get_min_positionEv"></span><span id="onrobot::Robot2FG7::get_min_position"></span><span class="target" id="classonrobot_1_1Robot2FG7_1a1a76cf5a07859ea0ec113a2eafebafec"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_min_position</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG716get_min_positionEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the minimum position limit of the gripper. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The minimum position limit (m). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG716get_max_positionEv">
+<span id="_CPPv3N7onrobot9Robot2FG716get_max_positionEv"></span><span id="_CPPv2N7onrobot9Robot2FG716get_max_positionEv"></span><span id="onrobot::Robot2FG7::get_max_position"></span><span class="target" id="classonrobot_1_1Robot2FG7_1a77ca9d855876c00417f42cb7ffd81dfa"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_max_position</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG716get_max_positionEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the maximum position limit of the gripper. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The maximum position limit (m). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG713get_min_forceEv">
+<span id="_CPPv3N7onrobot9Robot2FG713get_min_forceEv"></span><span id="_CPPv2N7onrobot9Robot2FG713get_min_forceEv"></span><span id="onrobot::Robot2FG7::get_min_force"></span><span class="target" id="classonrobot_1_1Robot2FG7_1ab178b3fa63804dadc04a0286f63e2dd2"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_min_force</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG713get_min_forceEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the minimum force limit of the gripper. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The minimum force limit (m). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG713get_max_forceEv">
+<span id="_CPPv3N7onrobot9Robot2FG713get_max_forceEv"></span><span id="_CPPv2N7onrobot9Robot2FG713get_max_forceEv"></span><span id="onrobot::Robot2FG7::get_max_force"></span><span class="target" id="classonrobot_1_1Robot2FG7_1aa79ae0962dfd54cf95c64010d86fbf69"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_max_force</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG713get_max_forceEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the maximum force limit of the gripper. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The maximum force limit (N). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG710get_serialEv">
+<span id="_CPPv3N7onrobot9Robot2FG710get_serialEv"></span><span id="_CPPv2N7onrobot9Robot2FG710get_serialEv"></span><span id="onrobot::Robot2FG7::get_serial"></span><span class="target" id="classonrobot_1_1Robot2FG7_1a1a546f03e75b752f6faa9c6f2a9a1e4a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_serial</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG710get_serialEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the serial number of the gripper. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The serial number as a string. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7onrobot9Robot2FG712get_firmwareEv">
+<span id="_CPPv3N7onrobot9Robot2FG712get_firmwareEv"></span><span id="_CPPv2N7onrobot9Robot2FG712get_firmwareEv"></span><span id="onrobot::Robot2FG7::get_firmware"></span><span class="target" id="classonrobot_1_1Robot2FG7_1afdb618f40d31f41502b00b36c837090f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_firmware</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7onrobot9Robot2FG712get_firmwareEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the firmware version of the gripper. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The firmware version as a string. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="example.html" class="btn btn-neutral float-left" title="Example usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Touchlab Robotics.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
