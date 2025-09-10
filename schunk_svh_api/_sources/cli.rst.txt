@@ -1,0 +1,42 @@
+CLI interface
+=============
+
+You can use the CLI tool to test the Schunk SVH hand.
+
+Usage
+-----
+
+.. code-block:: console
+
+   schunk_svh_cli -p <port> [-o <finger_order>] [-t <priority>] <action> [args]
+
+Options
+-------
+
+.. code-block:: console
+
+   -p <port>                      Serial port (e.g., /dev/schunk_svh)
+   -o <finger_order>              Order in which to initialise fingers (default: 012345678)
+   -t <priority>                  Thread priority (default: 0 (lowest), range: 0 to 99)
+   --set-position <positions>     Set joint positions (comma-separated, 9 values)
+   --get-state                    Get joint states (position, velocity, effort)
+   --get-position-min <channel>   Get joint lower position limit
+   --get-position-max <channel>   Get joint upper position limit
+   --get-position-home <channel>  Get joint home position
+   --get-info                     Get firmware a-20nd device information
+
+Example
+-------
+
+- Device info ::code:`schunk_svh_api_cli -p /dev/schunk_svh --get-info`
+
+- Print state ::code:`schunk_svh_api_cli -p /dev/schunk_svh --get-state`
+
+- Get home position ::code:`schunk_svh_api_cli -p /dev/schunk_svh --get-position-home 0`
+
+.. note::
+
+      To communicate with the hand, you need to first initialise it. This will happen every time
+      you run the CLI tool. It will calibrate the finger encoders by slowly driving the motors
+      to their limits.
+      If you want to avoid this, you can use the API directly in your application.

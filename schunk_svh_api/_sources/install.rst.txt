@@ -1,0 +1,76 @@
+Installation
+============
+
+Using CMake
+-----------
+
+1. Install CMake and a C++ compiler that supports C++17.
+2. Create a build directory and navigate into it:
+
+   .. code-block:: bash
+
+      mkdir build
+      cd build
+
+3. Run CMake to configure the project:
+
+   .. code-block:: bash
+
+      cmake ..
+
+4. Build the project:
+
+   .. code-block:: bash
+
+      cmake --build .
+
+5. Optionally, install the library and tools:
+
+   .. code-block:: bash
+
+      sudo cmake --install .
+
+Using Colcon
+------------
+
+The repository is a valid Colcon package. To build it put the package in your `Colcon workspace`_ and `build the workspace`_.
+
+.. _Colcon workspace: https://colcon.readthedocs.io/en/released/user/what-is-a-workspace.html
+.. _build the workspace: https://colcon.readthedocs.io/en/released/user/quick-start.html
+
+UDEV rules
+----------
+
+To enable consistent naming of the device as `/dev/schunk_svh` and `/dev/schunk_svh<SERIAL_NUMBER>`, follow these steps:
+
+1. Copy the UDEV rules file to the appropriate directory:
+
+   .. code-block:: bash
+
+      sudo cp udev/43-schunk-svh.rules /etc/udev/rules.d/
+
+2. Reload the udev rules and trigger them:
+
+   .. code-block:: bash
+
+      sudo udevadm control --reload-rules
+      sudo udevadm trigger
+
+4. Verify the device is correctly named:
+
+   .. code-block:: bash
+
+      ls -l /dev/schunk_svh*
+
+.. note::
+
+      If you are running the API or derived driver in a Docker container,
+      you have to perform the bove steps in the host system.
+
+.. note::
+
+      The serial number is read from the USB-to-Serial converter chip and
+      it will not match the serial number of the hand itself. It is still useful when connecting
+      multiple hands to the same computer as long as you connect the hand consistently
+      to the same adapter.
+

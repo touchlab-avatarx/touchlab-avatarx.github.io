@@ -1,0 +1,7 @@
+API
+===
+
+.. doxygenenum:: schunk_svh::SVHChannel
+
+.. doxygenclass:: schunk_svh::SchunkSVH
+  :members:

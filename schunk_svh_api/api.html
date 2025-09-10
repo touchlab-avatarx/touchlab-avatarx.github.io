@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API &mdash; Schunk SVH API 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../common/_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../common/_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=183a17e2" />
+      <link rel="stylesheet" type="text/css" href="../common/_static/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="../common/_static/jquery.js"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../common/_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="../common/_static/documentation_options.js"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="../common/_static/doctools.js"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../common/_static/sphinx_highlight.js"></script>
+    <script src="../common/_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Example usage" href="example.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #191e24" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Schunk SVH API
+              <img src="../common/_static/touchlab_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannelE"><code class="docutils literal notranslate"><span class="pre">SVHChannel</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannel7SVH_ALLE"><code class="docutils literal notranslate"><span class="pre">SVH_ALL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannel17SVH_THUMB_FLEXIONE"><code class="docutils literal notranslate"><span class="pre">SVH_THUMB_FLEXION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannel20SVH_THUMB_OPPOSITIONE"><code class="docutils literal notranslate"><span class="pre">SVH_THUMB_OPPOSITION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannel23SVH_INDEX_FINGER_DISTALE"><code class="docutils literal notranslate"><span class="pre">SVH_INDEX_FINGER_DISTAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannel25SVH_INDEX_FINGER_PROXIMALE"><code class="docutils literal notranslate"><span class="pre">SVH_INDEX_FINGER_PROXIMAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannel24SVH_MIDDLE_FINGER_DISTALE"><code class="docutils literal notranslate"><span class="pre">SVH_MIDDLE_FINGER_DISTAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannel26SVH_MIDDLE_FINGER_PROXIMALE"><code class="docutils literal notranslate"><span class="pre">SVH_MIDDLE_FINGER_PROXIMAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannel15SVH_RING_FINGERE"><code class="docutils literal notranslate"><span class="pre">SVH_RING_FINGER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannel9SVH_PINKYE"><code class="docutils literal notranslate"><span class="pre">SVH_PINKY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannel17SVH_FINGER_SPREADE"><code class="docutils literal notranslate"><span class="pre">SVH_FINGER_SPREAD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannel13SVH_DIMENSIONE"><code class="docutils literal notranslate"><span class="pre">SVH_DIMENSION</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVHE"><code class="docutils literal notranslate"><span class="pre">schunk_svh::SchunkSVH</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVH9SchunkSVHEv"><code class="docutils literal notranslate"><span class="pre">SchunkSVH()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVHD0Ev"><code class="docutils literal notranslate"><span class="pre">~SchunkSVH()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVH7connectERKNSt6stringERKNSt6stringEi"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVH4readERNSt6vectorIdEERNSt6vectorIdEERNSt6vectorIdEEi"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVH5writeERKNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVH16get_last_commandERNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">get_last_command()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVH8get_infoEv"><code class="docutils literal notranslate"><span class="pre">get_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVH16get_position_minE10SVHChannel"><code class="docutils literal notranslate"><span class="pre">get_position_min()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVH16get_position_maxE10SVHChannel"><code class="docutils literal notranslate"><span class="pre">get_position_max()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVH17get_position_homeE10SVHChannel"><code class="docutils literal notranslate"><span class="pre">get_position_home()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVH21set_position_settingsE10SVHChannelRKNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">set_position_settings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N10schunk_svh9SchunkSVH20set_current_settingsE10SVHChannelRKNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">set_current_settings()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #191e24" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Schunk SVH API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Link to this heading"></a></h1>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannelE">
+<span id="_CPPv3N10schunk_svh10SVHChannelE"></span><span id="_CPPv2N10schunk_svh10SVHChannelE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">schunk_svh</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">SVHChannel</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannelE" title="Link to this definition"></a><br /></dt>
+<dd><p>Enum mapping fingers to their index. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannel7SVH_ALLE">
+<span id="_CPPv3N10schunk_svh10SVHChannel7SVH_ALLE"></span><span id="_CPPv2N10schunk_svh10SVHChannel7SVH_ALLE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526a20ec8f21788996e3c67740b10913dee5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVH_ALL</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannel7SVH_ALLE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannel17SVH_THUMB_FLEXIONE">
+<span id="_CPPv3N10schunk_svh10SVHChannel17SVH_THUMB_FLEXIONE"></span><span id="_CPPv2N10schunk_svh10SVHChannel17SVH_THUMB_FLEXIONE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526a77d2debe7d3986abd99bde683522a6bb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVH_THUMB_FLEXION</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannel17SVH_THUMB_FLEXIONE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannel20SVH_THUMB_OPPOSITIONE">
+<span id="_CPPv3N10schunk_svh10SVHChannel20SVH_THUMB_OPPOSITIONE"></span><span id="_CPPv2N10schunk_svh10SVHChannel20SVH_THUMB_OPPOSITIONE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526a7c3f93d85b0f07bf13ce92afff69e849"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVH_THUMB_OPPOSITION</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannel20SVH_THUMB_OPPOSITIONE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannel23SVH_INDEX_FINGER_DISTALE">
+<span id="_CPPv3N10schunk_svh10SVHChannel23SVH_INDEX_FINGER_DISTALE"></span><span id="_CPPv2N10schunk_svh10SVHChannel23SVH_INDEX_FINGER_DISTALE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526aa2422d6266274e3be5af7ffd4a6eb843"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVH_INDEX_FINGER_DISTAL</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannel23SVH_INDEX_FINGER_DISTALE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannel25SVH_INDEX_FINGER_PROXIMALE">
+<span id="_CPPv3N10schunk_svh10SVHChannel25SVH_INDEX_FINGER_PROXIMALE"></span><span id="_CPPv2N10schunk_svh10SVHChannel25SVH_INDEX_FINGER_PROXIMALE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526ac1aed670ce396a9695b83bc1abd38e2a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVH_INDEX_FINGER_PROXIMAL</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannel25SVH_INDEX_FINGER_PROXIMALE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannel24SVH_MIDDLE_FINGER_DISTALE">
+<span id="_CPPv3N10schunk_svh10SVHChannel24SVH_MIDDLE_FINGER_DISTALE"></span><span id="_CPPv2N10schunk_svh10SVHChannel24SVH_MIDDLE_FINGER_DISTALE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526a150dedd61b46f7445d2c3568c1b09fc2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVH_MIDDLE_FINGER_DISTAL</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannel24SVH_MIDDLE_FINGER_DISTALE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannel26SVH_MIDDLE_FINGER_PROXIMALE">
+<span id="_CPPv3N10schunk_svh10SVHChannel26SVH_MIDDLE_FINGER_PROXIMALE"></span><span id="_CPPv2N10schunk_svh10SVHChannel26SVH_MIDDLE_FINGER_PROXIMALE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526a8f65611ded195a30bd7ef6138ed7b6f7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVH_MIDDLE_FINGER_PROXIMAL</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannel26SVH_MIDDLE_FINGER_PROXIMALE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannel15SVH_RING_FINGERE">
+<span id="_CPPv3N10schunk_svh10SVHChannel15SVH_RING_FINGERE"></span><span id="_CPPv2N10schunk_svh10SVHChannel15SVH_RING_FINGERE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526a2f314a3e6e48fa29ed14bcf5aaad7b1a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVH_RING_FINGER</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannel15SVH_RING_FINGERE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannel9SVH_PINKYE">
+<span id="_CPPv3N10schunk_svh10SVHChannel9SVH_PINKYE"></span><span id="_CPPv2N10schunk_svh10SVHChannel9SVH_PINKYE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526af055206ea7089e205caf3fd0290e4e12"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVH_PINKY</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannel9SVH_PINKYE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannel17SVH_FINGER_SPREADE">
+<span id="_CPPv3N10schunk_svh10SVHChannel17SVH_FINGER_SPREADE"></span><span id="_CPPv2N10schunk_svh10SVHChannel17SVH_FINGER_SPREADE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526a1e67de1328586713bdaad3d6f19070b0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVH_FINGER_SPREAD</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannel17SVH_FINGER_SPREADE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh10SVHChannel13SVH_DIMENSIONE">
+<span id="_CPPv3N10schunk_svh10SVHChannel13SVH_DIMENSIONE"></span><span id="_CPPv2N10schunk_svh10SVHChannel13SVH_DIMENSIONE"></span><span class="target" id="namespaceschunk__svh_1a457c6c9c9c4b4115f2853e4b20f7f526a5cac51a3695e5f4a2f8eb5071de78295"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVH_DIMENSION</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh10SVHChannel13SVH_DIMENSIONE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVHE">
+<span id="_CPPv3N10schunk_svh9SchunkSVHE"></span><span id="_CPPv2N10schunk_svh9SchunkSVHE"></span><span id="schunk_svh::SchunkSVH"></span><span class="target" id="classschunk__svh_1_1SchunkSVH"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SchunkSVH</span></span></span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVHE" title="Link to this definition"></a><br /></dt>
+<dd><p>Schunk SVH API. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVH9SchunkSVHEv">
+<span id="_CPPv3N10schunk_svh9SchunkSVH9SchunkSVHEv"></span><span id="_CPPv2N10schunk_svh9SchunkSVH9SchunkSVHEv"></span><span id="schunk_svh::SchunkSVH::SchunkSVH"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1a5407b1c3ef443b76d5376ad79441c43d"></span><span class="sig-name descname"><span class="n"><span class="pre">SchunkSVH</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVH9SchunkSVHEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct a new Schunk SVH object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVHD0Ev">
+<span id="_CPPv3N10schunk_svh9SchunkSVHD0Ev"></span><span id="_CPPv2N10schunk_svh9SchunkSVHD0Ev"></span><span id="schunk_svh::SchunkSVH::~SchunkSVH"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1a6e3d67d2447cb30625037c33453481ed"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~SchunkSVH</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVHD0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Destroy the Schunk SVH object and stop motion. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVH7connectERKNSt6stringERKNSt6stringEi">
+<span id="_CPPv3N10schunk_svh9SchunkSVH7connectERKNSt6stringERKNSt6stringEi"></span><span id="_CPPv2N10schunk_svh9SchunkSVH7connectERKNSt6stringERKNSt6stringEi"></span><span id="schunk_svh::SchunkSVH::connect__ssCR.ssCR.i"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1afe1d8705232d3b11f68770d16745f291"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">connect</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">port</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">finger_order</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">priority</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVH7connectERKNSt6stringERKNSt6stringEi" title="Link to this definition"></a><br /></dt>
+<dd><p>Connect to the Schunk SVH, reset each finger, home its position, and start the control thread in the background. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> – Serial port on which the robot is connected </p></li>
+<li><p><strong>finger_order</strong> – Order in which to initialise the fingers as a string containing the finger indices. Default order is “012345678” </p></li>
+<li><p><strong>priority</strong> – Thread priority for the control thread (default 0, set to a positive value for real-time scheduling on Linux) </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVH4readERNSt6vectorIdEERNSt6vectorIdEERNSt6vectorIdEEi">
+<span id="_CPPv3N10schunk_svh9SchunkSVH4readERNSt6vectorIdEERNSt6vectorIdEERNSt6vectorIdEEi"></span><span id="_CPPv2N10schunk_svh9SchunkSVH4readERNSt6vectorIdEERNSt6vectorIdEERNSt6vectorIdEEi"></span><span id="schunk_svh::SchunkSVH::read__std::vector:double:R.std::vector:double:R.std::vector:double:R.i"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1a2d37e8f0b2e8911d0f832ceec5097a36"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">position</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">velocity</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">effort</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">500</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVH4readERNSt6vectorIdEERNSt6vectorIdEERNSt6vectorIdEEi" title="Link to this definition"></a><br /></dt>
+<dd><p>Read joint state from the robot. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> – Returns joint position in <code class="docutils literal notranslate"><span class="pre">rad</span></code> (will resize the vector) </p></li>
+<li><p><strong>velocity</strong> – Returns joint velocity in <code class="docutils literal notranslate"><span class="pre">rad/s</span></code> (will resize the vector) </p></li>
+<li><p><strong>effort</strong> – Returns joint current in <code class="docutils literal notranslate"><span class="pre">A</span></code> (will resize the vector) </p></li>
+<li><p><strong>timeout</strong> – Timeout in <code class="docutils literal notranslate"><span class="pre">ms</span></code> for waiting for the read operation (default 500, set 0 for non-blocking read) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true If read operation completed before timeout or if timeout=0 </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>false If failed to read within the allocated time </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVH5writeERKNSt6vectorIdEE">
+<span id="_CPPv3N10schunk_svh9SchunkSVH5writeERKNSt6vectorIdEE"></span><span id="_CPPv2N10schunk_svh9SchunkSVH5writeERKNSt6vectorIdEE"></span><span id="schunk_svh::SchunkSVH::write__std::vector:double:CR"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1ade03c151d66b43c23613370c88491632"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">position</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVH5writeERKNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Write joint commands to the robot. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> – Vector of 9 joint position commands in <code class="docutils literal notranslate"><span class="pre">rad</span></code> in the order defined in the <code class="docutils literal notranslate"><span class="pre">SVHChannel</span></code> enum </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVH16get_last_commandERNSt6vectorIdEE">
+<span id="_CPPv3N10schunk_svh9SchunkSVH16get_last_commandERNSt6vectorIdEE"></span><span id="_CPPv2N10schunk_svh9SchunkSVH16get_last_commandERNSt6vectorIdEE"></span><span id="schunk_svh::SchunkSVH::get_last_command__std::vector:double:R"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1a98b791c46b939541d9669bb80a00615e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_last_command</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">position</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVH16get_last_commandERNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the last position command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> – Returns last command set to the robot (returns the measured position after startup) </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true If last command is available (should always return this if <code class="docutils literal notranslate"><a class="reference internal" href="#classschunk__svh_1_1SchunkSVH_1afe1d8705232d3b11f68770d16745f291"><span class="std std-ref"><span class="pre">connect()</span></span></a></code> was successful) </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>false If last command is not available </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVH8get_infoEv">
+<span id="_CPPv3N10schunk_svh9SchunkSVH8get_infoEv"></span><span id="_CPPv2N10schunk_svh9SchunkSVH8get_infoEv"></span><span id="schunk_svh::SchunkSVH::get_info"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1a98452b06c3d17c5ba0144c3b6701966b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_info</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVH8get_infoEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the firmware info. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>std::string Returns the firmware info and position/current/encoder settings for each finger </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVH16get_position_minE10SVHChannel">
+<span id="_CPPv3N10schunk_svh9SchunkSVH16get_position_minE10SVHChannel"></span><span id="_CPPv2N10schunk_svh9SchunkSVH16get_position_minE10SVHChannel"></span><span id="schunk_svh::SchunkSVH::get_position_min__SVHChannel"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1a62046f9d3e54228e443cc87b4fe46b30"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_position_min</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannelE" title="schunk_svh::SVHChannel"><span class="n"><span class="pre">SVHChannel</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">channel</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVH16get_position_minE10SVHChannel" title="Link to this definition"></a><br /></dt>
+<dd><p>Get joint lower position limit. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>channel</strong> – Joint index </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>double Returns joint limit in radians </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVH16get_position_maxE10SVHChannel">
+<span id="_CPPv3N10schunk_svh9SchunkSVH16get_position_maxE10SVHChannel"></span><span id="_CPPv2N10schunk_svh9SchunkSVH16get_position_maxE10SVHChannel"></span><span id="schunk_svh::SchunkSVH::get_position_max__SVHChannel"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1a84c841c9a2aa1f4bd2032fb7a0ec1696"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_position_max</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannelE" title="schunk_svh::SVHChannel"><span class="n"><span class="pre">SVHChannel</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">channel</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVH16get_position_maxE10SVHChannel" title="Link to this definition"></a><br /></dt>
+<dd><p>Get joint upper position limit. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>channel</strong> – Joint index </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>double Returns joint limit in radians </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVH17get_position_homeE10SVHChannel">
+<span id="_CPPv3N10schunk_svh9SchunkSVH17get_position_homeE10SVHChannel"></span><span id="_CPPv2N10schunk_svh9SchunkSVH17get_position_homeE10SVHChannel"></span><span id="schunk_svh::SchunkSVH::get_position_home__SVHChannel"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1abb3f24ee3d374fc56b43ebba26a2d270"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_position_home</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannelE" title="schunk_svh::SVHChannel"><span class="n"><span class="pre">SVHChannel</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">channel</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVH17get_position_homeE10SVHChannel" title="Link to this definition"></a><br /></dt>
+<dd><p>Get joint home position. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>channel</strong> – Joint index </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>double Joint home position </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVH21set_position_settingsE10SVHChannelRKNSt6vectorIdEE">
+<span id="_CPPv3N10schunk_svh9SchunkSVH21set_position_settingsE10SVHChannelRKNSt6vectorIdEE"></span><span id="_CPPv2N10schunk_svh9SchunkSVH21set_position_settingsE10SVHChannelRKNSt6vectorIdEE"></span><span id="schunk_svh::SchunkSVH::set_position_settings__SVHChannel.std::vector:double:CR"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1af5477d24f0aa4ff061e9bfd9cd33e811"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_position_settings</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannelE" title="schunk_svh::SVHChannel"><span class="n"><span class="pre">SVHChannel</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">channel</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">settings</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVH21set_position_settingsE10SVHChannelRKNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Set the position settings for a joint (incorrect settings can break the robot, consult the manual) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel</strong> – Joint index </p></li>
+<li><p><strong>settings</strong> – Vector of joint position settings to update (wmn, wmx, dwmx, ky, dt, imn, imx, kp, ki, kd) </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10schunk_svh9SchunkSVH20set_current_settingsE10SVHChannelRKNSt6vectorIdEE">
+<span id="_CPPv3N10schunk_svh9SchunkSVH20set_current_settingsE10SVHChannelRKNSt6vectorIdEE"></span><span id="_CPPv2N10schunk_svh9SchunkSVH20set_current_settingsE10SVHChannelRKNSt6vectorIdEE"></span><span id="schunk_svh::SchunkSVH::set_current_settings__SVHChannel.std::vector:double:CR"></span><span class="target" id="classschunk__svh_1_1SchunkSVH_1a7feb1be36c2970b500c8b3464db5f1c2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_current_settings</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N10schunk_svh10SVHChannelE" title="schunk_svh::SVHChannel"><span class="n"><span class="pre">SVHChannel</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">channel</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">settings</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10schunk_svh9SchunkSVH20set_current_settingsE10SVHChannelRKNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Set the current settings for a joint (incorrect settings can break the robot, consult the manual) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel</strong> – Joint index </p></li>
+<li><p><strong>settings</strong> – Vector of joint position settings to update (wmn, wmx, ky, dt, imn, imx, kp, ki, umn, umx) </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="example.html" class="btn btn-neutral float-left" title="Example usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Touchlab Robotics.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
