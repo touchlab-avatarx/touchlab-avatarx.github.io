@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example usage &mdash; Touchlab Python Bindings 0.1.10 documentation</title>
+  <title>Example usage &mdash; Touchlab Python Bindings 0.1.11 documentation</title>
       <!-- <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" /> -->
       <link rel="stylesheet" type="text/css" href="../common/_static/pygments.css" />
       <!-- <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" /> -->
@@ -19,7 +19,7 @@
       <script src="../common/_static/jquery.js"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../common/_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script src="_static/documentation_options.js?v=bafade30"></script>
+      <script src="_static/documentation_options.js?v=1e825a29"></script>
       <script src="../common/_static/documentation_options.js"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="../common/_static/doctools.js"></script>
@@ -82,57 +82,16 @@
              
   <section id="example-usage">
 <h1>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="c1"># Copyright (c) 2025 Touchlab Limited. All Rights Reserved</span>
-<span class="c1"># Unauthorized copying or modifications of this file, via any medium is strictly prohibited.</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">touchlab_comm_py</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tl</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># Set up argument parser</span>
-        <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Touchlab Sensor Example&quot;</span><span class="p">)</span>
-        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;port&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Serial port to connect to&quot;</span><span class="p">)</span>
-        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-p&quot;</span><span class="p">,</span> <span class="s2">&quot;--parameter_file&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Parameter file to load&quot;</span><span class="p">)</span>
-        <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">parameter_file</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">args</span><span class="o">.</span><span class="n">parameter_file</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-
-        <span class="c1"># Connect to the sensor</span>
-        <span class="n">com</span><span class="o">=</span><span class="n">tl</span><span class="o">.</span><span class="n">TouchlabComms</span><span class="p">()</span>
-        <span class="n">com</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">parameter_file</span><span class="p">)</span>
-        <span class="n">com</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
-
-        <span class="c1"># Set up frequency counting</span>
-        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-        <span class="n">hz</span> <span class="o">=</span> <span class="mf">0.0</span>
-        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="c1"># Read data and print</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rate: </span><span class="si">{</span><span class="n">hz</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">Hz, Triaxial Data: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="c1"># Read raw data and print</span>
-            <span class="n">data_raw</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">read_raw</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rate: </span><span class="si">{</span><span class="n">hz</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">Hz, Raw Data: </span><span class="si">{</span><span class="n">data_raw</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="c1"># Calculate sensor update rate</span>
-            <span class="n">diff</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>
-                <span class="n">hz</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">/</span> <span class="n">diff</span>
-                <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-                <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
-        <span class="k">pass</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
+<p>Example code for reading sensor data and printing the values. The raw values get translated to
+calibrated values using the Touchlab library. You have to provide a calibration file for this
+to work. If you omit the calibration file only raw values will be printed.
+.. literalinclude:: ../examples/example.py</p>
+<p>The following code will not connect to the Touchlab device, but it will translate raw data
+provided by user into calibrated values using the Touchlab library. You have to provide a
+calibration file for this to work. The calibration requires the model to be biased. We do this by
+calling the zeroing function before translating the data. You have to choose one or more samples
+that represent sensor values without any load.
+.. literalinclude:: ../examples/example_translate.py</p>
 </section>
 
 
